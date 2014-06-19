@@ -21,8 +21,9 @@ VPN_LOCAL="192.168.0.150"
 VPN_REMOTE="192.168.0.151-200"
 PUB_IP="27.255.66.50"
 
+yum -y install ppp 
 rpm -i http://poptop.sourceforge.net/yum/stable/rhel6/pptp-release-current.noarch.rpm
-yum -y install ppp pptpd
+yum -y install pptpd
 
 
 echo "localip $VPN_LOCAL" >> /etc/pptpd.conf # Local IP address of your VPN server
