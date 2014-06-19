@@ -15,8 +15,6 @@ echo "ms-dns 208.67.222.222" >> /etc/ppp/options.pptpd # OpenDNS Primary
 echo "test * test *" >> /etc/ppp/chap-secrets
 sysctl -p
 
-
- "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE" >> /etc/rc.local 
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE 
 iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 iptables save 
